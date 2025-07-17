@@ -1,10 +1,10 @@
 # How to run the project locally:
-
+Copy the envs in .env.local file
 npm run local
 It will start a docker-compose with Localstack (local host for S3) and a postgres image.
 
 # How to run integration test:
-
+Copy the envs in .env.test file
 npm run test:integration
 it will start another docker-compose with 2 simple integration test:
 
