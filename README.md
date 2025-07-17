@@ -93,3 +93,43 @@ If the app should go in a real PROD env, so the apps needs to serve multiple use
   We can also consider to have different schema for each tenant, but it is more complex to handle and manage
 * Auth: we should consider a method to retrieve data for the specific tenant.
 * Logging and monitor: we should be able to read logs and metrics for each tenant, the tenant_id may help in this process.
+
+
+# ENV
+## START LOCAL ENV
+PORT=5005
+SST_URL=http://localhost:5005
+
+# API AUTH
+PRIVATE_BASIC_AUTH_USERNAME=superuser@
+PRIVATE_BASIC_AUTH_PWD=only_for_test
+# S3
+PRIVATE_S3_CLIENT_KEY_ID=key_id_local
+PRIVATE_S3_CLIENT_SECRET=secret_local
+S3_URL=http://localhost:4566
+# POSTGRES
+POSTGRES_PORT=5436
+PRIVATE_POSTGRES_PASSWORD=pgres_pwd
+PRIVATE_POSTGRES_USERNAME=pgres_username
+POSTGRES_DB=pgres_local_db
+POSTGRES_HOST=localhost
+## END LOCAL ENV
+
+## START TEST ENV
+PORT=5009
+SST_URL=http://localhost:5009
+NODE_ENV=test
+# API AUTH
+PRIVATE_BASIC_AUTH_USERNAME=integration-user@
+PRIVATE_BASIC_AUTH_PWD=integration-PWD
+# S3
+PRIVATE_S3_CLIENT_KEY_ID=key_id_integration
+PRIVATE_S3_CLIENT_SECRET=secret_integration
+S3_URL=http://localhost:4569
+# POSTGRES
+POSTGRES_PORT=5439
+PRIVATE_POSTGRES_PASSWORD=pgres_pwd_integration
+PRIVATE_POSTGRES_USERNAME=pgres_username_integration
+POSTGRES_DB=pgres_integration_db
+POSTGRES_HOST=localhost
+## END TEST ENV
