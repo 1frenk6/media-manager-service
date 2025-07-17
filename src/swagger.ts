@@ -12,15 +12,15 @@ const options = {
       version: '1.0.0',
       description: 'Media manager API service used to handle files',
     },
-    servers: [
-      {
-        url: 'http://MediaManagerLoa-tukruewm-1043165547.eu-north-1.elb.amazonaws.com',
-        describe: 'Production url',
-      },
-      {
-        url: CONFIGS.SERVER_URL,
-      },
-    ],
+    // servers: [
+    //   {
+    //     url: 'http://MediaManagerLoa-bcnuhmvh-2144080383.eu-north-1.elb.amazonaws.com',
+    //     describe: 'Production url',
+    //   },
+    //   {
+    //     url: CONFIGS.SERVER_URL,
+    //   },
+    // ],
     components: {
       securitySchemes: {
         basicAuth: {

@@ -16,7 +16,7 @@ const CONFIGS = {
   S3: {
     CLIENT_KEY_ID: process.env.PRIVATE_S3_CLIENT_KEY_ID,
     CLIENT_SECRET: process.env.PRIVATE_S3_CLIENT_SECRET,
-    BUCKET_NAME: 'fvitelli-files',
+    BUCKET_NAME: `fvitelli-files-2`,
     URL: process.env.S3_URL,
   },
   DB: {
