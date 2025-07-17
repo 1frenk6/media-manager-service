@@ -18,10 +18,6 @@ const options = {
         describe: 'Production url',
       },
       {
-        url: 'http://MediaManagerLoa-tukruewm-1043165547.eu-north-1.elb.amazonaws.com123',
-        describe: 'Production url',
-      },
-      {
         url: CONFIGS.SERVER_URL,
       },
     ],
