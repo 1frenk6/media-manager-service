@@ -1,0 +1,32 @@
+services:
+  # doc: https://docs.localstack.cloud/aws/services/s3/
+  localstack:
+    container_name: 'localstack-integration'
+    image: localstack/localstack:s3-latest
+    ports:
+      - '127.0.0.1:4569:4566' # LocalStack Gateway
+    environment:
+      - DEBUG=0
+    volumes:
+      - '${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+
+  postgres:
+    image: postgres:17
+    restart: always
+    container_name: postgres-kysely-integration
+    ports:
+      - 5439:5432
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=pgres_pwd_integration
+      - POSTGRES_USER=pgres_username_integration
+      - POSTGRES_DB=pgres_integration_db
+volumes:
+  pg_data:
+
+  # aws-docker-cli:
+  #   image: amazon/aws-cli
+  #   entrypoint: tail -f /dev/null # Force to stay alive
+  #   container_name: aws-docker-cli
